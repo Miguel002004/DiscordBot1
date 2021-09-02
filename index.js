@@ -1,4 +1,12 @@
 const { Client, Intents } = require('discord.js');
+const fs = require('fs');
+//==========================================
+let rawdata = fs.readFileSync('config.json');
+let config = JSON.parse(rawdata);
+//==========================================
+
+const TOKEN = config.token
+console.log(TOKEN);
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
@@ -10,4 +18,4 @@ client.on('message',(message)=>{
   message.content == 'miguel' ? message.reply('la mera verga') : null;
 });
 
-client.login('ODgyNzA3MTcyMDU4ODY5Nzgx.YS_THQ.QOC2OBhGBeN2wdCQ3e9FgEuyxrw');
+client.login(TOKEN);
