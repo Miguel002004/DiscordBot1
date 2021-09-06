@@ -1,4 +1,4 @@
-const { Client, Intents } = require('discord.js');
+const { Client, Intents, MessageEmbed} = require('discord.js');
 const fs = require('fs');
 //==========================================
 let rawdata = fs.readFileSync('config.json');
@@ -16,6 +16,8 @@ client.on('ready',()=>{
 client.on('message',(message)=>{
   console.log(message.author.username+': '+message.content);
   message.content == 'miguel' ? message.reply('la mera verga') : null;
+  message.content == 'pp' ? message.reply('navas fierro') : null;
+  message.content == 'mimi' ? message.reply('Te me vas a pluton >:D'): null;
 });
 
 client.login(TOKEN);
